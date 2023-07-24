@@ -60,7 +60,7 @@ public class SellerRepository {
         return seller;
     }
 
-    // FindByEmail
+    // FindByEmail -> INSERT 시 email 중복 제외
     public Seller findByEmail(String email){
         try{
             Query query = em.createNativeQuery("select * from seller_tb where email = :email", Seller.class);
@@ -72,6 +72,7 @@ public class SellerRepository {
         }
     }
 
+    // ▣ 아직 -> SELLER에서도 알 수 있도록 하기
     // seller별 product 보기 - join
     public Seller findByIdJoinProduct(int id) {
         Query query = em.createNativeQuery("select * \n" +

@@ -25,7 +25,9 @@ public class Product {
     @ManyToOne
     private Seller seller;
 
-
+    //  @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // IDENTITY : 자동증가기능
+    // AUTO : 주요 키 자동증가를 명시적으로 선택하고 싶지 않을 때
 
     // @ManyToOne : n:1의 관계의 어노테이션
     // seller 1명에 다양한 물건을 등록할 수 있기 때문에, seller가 1이라서

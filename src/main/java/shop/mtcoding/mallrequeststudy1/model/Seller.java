@@ -22,6 +22,7 @@ public class Seller {
 
     @OneToMany(mappedBy = "seller") // mappedBy로 연관관계 주인을 지정
     private List<Product> product;
+    // 1:N관계로써, product가 많은 행을 가질 수 있으므로 List로 받는다.
 
     @Builder
     public Seller(Integer id, String name, String email, List<Product> product) {
