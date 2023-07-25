@@ -23,6 +23,8 @@ public class Product {
     private Timestamp createdAt;
 
     @ManyToOne
+    @JoinColumn(name = "seller_id", foreignKey = @ForeignKey(name = "fk_product_seller"))
+    // 양쪽에 ManyToOne, OneToMany가 있는 경우, fk를 지정해주지 않으면 create 시 외래키 자동 생성으로 오류가 발생할 수 있다.
     private Seller seller;
 
     //  @GeneratedValue(strategy = GenerationType.IDENTITY)
