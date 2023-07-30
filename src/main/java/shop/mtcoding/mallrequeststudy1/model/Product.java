@@ -1,17 +1,16 @@
 package shop.mtcoding.mallrequeststudy1.model;
 
 import lombok.Builder;
-import lombok.NonNull;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 @Setter
 @Table(name = "product_tb")
+// @Table : @Enity가 생성한 테이블에 관련된 설정
 @Entity
+// @Entity : DB 테이블 생성
 public class Product {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
