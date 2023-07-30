@@ -112,6 +112,7 @@ public class ProductController {
     // 상품수정 기능 - datailPage에서 상품 수정 클릭
     @PostMapping("/product/update")
     public String update(String name, Integer price, Integer qty, Integer id) {
+        // /product/update와 연결이 되어 있기 때문에, key값을 입력만 해도 매개변수로 값을 가지고 올 수 있다.
         productRepository.update(name, price, qty, id);
 
         return "redirect:/";
